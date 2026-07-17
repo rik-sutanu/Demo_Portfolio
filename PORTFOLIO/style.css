@@ -1,0 +1,993 @@
+/* ==========================================================================
+   STYLE.CSS - High-Tech Dark Mode Developer Portfolio
+   Typography: 'Courier New', monospace
+   Color Palette: Bg: #0d1117, Text: #c9d1d9, Accent: #58a6ff
+   ========================================================================== */
+
+/* 1. ROOT VARIABLES & RESET */
+:root {
+    --bg-color: #0d1117;
+    --bg-grid-color: #161b22;
+    --text-color: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent-color: #58a6ff;
+    --accent-glow: rgba(88, 166, 255, 0.25);
+    --card-bg: rgba(22, 27, 34, 0.8);
+    --border-color: #30363d;
+    --border-hover: #8b949e;
+    --dot-red: #f85149;
+    --dot-yellow: #d29922;
+    --dot-green: #3fb950;
+    
+    /* Monospace coding feel */
+    --font-family: 'Courier New', Courier, monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    /* High-tech tech grid pattern background using linear gradients */
+    background-image: 
+        linear-gradient(to right, rgba(48, 54, 61, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(48, 54, 61, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    padding-bottom: 2rem;
+    overflow-x: hidden;
+}
+
+/* Custom terminal scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* 2. GENERAL LAYOUT UTILITIES */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Grid system for double-column layouts */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 900px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* High-Tech Terminal Card Styling */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 2rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Terminal Card Header Decor */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.card-dot-decorations {
+    display: flex;
+    gap: 6px;
+}
+
+.card-dot-decorations .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+}
+
+.card-dot-decorations .dot.red { background-color: var(--dot-red); }
+.card-dot-decorations .dot.yellow { background-color: var(--dot-yellow); }
+.card-dot-decorations .dot.green { background-color: var(--dot-green); }
+
+.card-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* Custom Headings */
+.section-title {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    border-right: 2px solid var(--accent-color);
+    padding-right: 8px;
+    /* Simulated blink typing cursor effect */
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color); }
+}
+
+/* ==========================================================================
+   3. SPECIFIC SECTION STYLES
+   ========================================================================== */
+
+/* --- SCROLLING MARQUEE --- */
+.marquee-container {
+    background-color: var(--bg-grid-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.75rem 0;
+    position: relative;
+    width: 100vw;
+}
+
+.marquee-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee-animation 25s linear infinite;
+}
+
+.marquee-content span {
+    font-family: var(--font-family);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    padding: 0 2rem;
+    text-shadow: 0 0 5px var(--accent-glow);
+}
+
+@keyframes marquee-animation {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* --- HERO SECTION --- */
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    overflow: hidden;
+}
+
+/* Background Image Container */
+.hero-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px; /* Rectangular aspect Ratio */
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    transition: opacity 0.5s ease;
+}
+
+.hero-card:hover .hero-bg-img {
+    opacity: 0.4;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, var(--bg-color), transparent);
+}
+
+/* Profile Pictures Arrangement */
+.profile-images-wrapper {
+    position: relative;
+    margin-top: 50px; /* Hovering over the back boundary */
+    margin-bottom: 1.5rem;
+    width: 160px;
+    height: 160px;
+    z-index: 10;
+}
+
+/* Main 3D Hovering Profile Picture Container */
+.profile-3d-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--accent-color), transparent);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    /* Set up perspective/transform variables for JS to write directly */
+    transform-style: preserve-3d;
+    perspective: 800px;
+    transition: transform 0.1s ease-out;
+}
+
+.profile-3d-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--bg-color);
+    background-color: var(--bg-color);
+}
+
+.glow-effect {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    opacity: 0.15;
+    filter: blur(10px);
+    z-index: -1;
+    animation: pulse-glow 3s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.05); opacity: 0.3; }
+}
+
+/* Secondary Flat Profile Picture Container */
+.profile-flat-container {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 2px;
+    background: var(--border-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+    z-index: 11;
+}
+
+.profile-flat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--bg-color);
+    background-color: var(--bg-color);
+}
+
+/* Hero Info Text details */
+.hero-info {
+    z-index: 10;
+    margin-top: 1rem;
+}
+
+.hero-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+}
+
+.hero-tagline {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.tech-spec {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(48, 54, 61, 0.4);
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.pulse-icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--dot-green);
+    box-shadow: 0 0 8px var(--dot-green);
+    animation: status-blink 1.5s infinite;
+}
+
+@keyframes status-blink {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+.spec-text {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Social Links styling */
+.social-links-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    z-index: 10;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(22, 27, 34, 0.8);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Social Links Hover Animation: translate and change color */
+.social-link:hover {
+    transform: translateY(-8px);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* --- SECTION 3: 3D TECHNICAL FEATURE ("Core Focus") --- */
+.tilt-target {
+    /* Setup variables for JS mapping values */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.15s ease-out;
+}
+
+.tech-image-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #000;
+    margin-bottom: 1.5rem;
+    transform: translateZ(30px); /* Pushes the image forward in 3D space */
+}
+
+.tech-feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: transform 0.5s ease;
+}
+
+.tech-image-container:hover .tech-feature-img {
+    transform: scale(1.05);
+}
+
+/* Futuristic Overlay elements */
+.tech-scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.25) 50%
+    ), linear-gradient(
+        90deg, 
+        rgba(255, 0, 0, 0.06), 
+        rgba(0, 255, 0, 0.02), 
+        rgba(0, 0, 255, 0.06)
+    );
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+}
+
+.tech-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 40%, rgba(13, 17, 23, 0.9) 100%);
+    pointer-events: none;
+}
+
+.card-inner-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(88, 166, 255, 0.15);
+    pointer-events: none;
+    box-shadow: inset 0 0 20px rgba(88, 166, 255, 0.05);
+}
+
+.focus-details {
+    transform: translateZ(15px);
+}
+
+.code-comment {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- SECTION 4: EDUCATION --- */
+.education-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.college-logo-container {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.college-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%);
+    transition: filter 0.3s ease;
+}
+
+.college-logo-container:hover .college-img {
+    filter: grayscale(0%);
+}
+
+.image-border-decor {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px dashed var(--accent-color);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.education-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.institution-name {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.degree-title {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.specialization-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: rgba(88, 166, 255, 0.1);
+    color: var(--accent-color);
+    border: 1px solid rgba(88, 166, 255, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.academic-year {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.academic-year i {
+    margin-right: 6px;
+}
+
+/* --- SECTION 5: CERTIFICATES --- */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.certificate-item {
+    background-color: rgba(22, 27, 34, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.certificate-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-4px);
+}
+
+.certificate-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+}
+
+.certificate-img-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.certificate-item:hover .certificate-img-placeholder {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-image-wrapper:hover .cert-overlay {
+    opacity: 1;
+}
+
+.cert-zoom-btn {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    background-color: rgba(13, 17, 23, 0.9);
+    letter-spacing: 1px;
+}
+
+.certificate-title {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.certificate-issuer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- SECTION 6: TECHNICAL SKILLS --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skill-badge-card {
+    background-color: rgba(22, 27, 34, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+.skill-badge-card:hover {
+    border-color: var(--accent-color);
+}
+
+.skill-icon-box {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.skill-name {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.skill-subtext {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.skill-bar-container {
+    width: 100%;
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.skill-bar-progress {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    width: 0%; /* Default layout width configured via inline CSS */
+}
+
+/* --- SECTION 7: PROJECTS --- */
+.project-card {
+    background-color: rgba(22, 27, 34, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+.project-tag {
+    color: var(--accent-color);
+    border: 1px dashed var(--accent-color);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+}
+
+.project-date {
+    color: var(--text-muted);
+}
+
+.project-title {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.project-tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tech-badges .badge {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    color: var(--text-muted);
+}
+
+.project-link-btn {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    background-color: rgba(88, 166, 255, 0.05);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-link-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* --- SECTION 8: ACHIEVEMENTS --- */
+.achievements-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.achievements-list li {
+    display: flex;
+    gap: 1rem;
+    background-color: rgba(22, 27, 34, 0.3);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.achievements-list li:hover {
+    border-color: var(--accent-color);
+}
+
+.achievement-icon {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: flex-start;
+}
+
+.achievement-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.achievement-text strong {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.achievement-text span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- SECTION 9: HOBBIES & INTERESTS --- */
+.hobbies-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .hobbies-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hobby-card {
+    background-color: rgba(22, 27, 34, 0.3);
+    border: 1px solid var(--border-color);
+    padding: 1.2rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.hobby-card:hover {
+    border-color: var(--accent-color);
+}
+
+.hobby-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.hobby-card h4 {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.hobby-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- SECTION 10: DESIRED CAREER PATH --- */
+.career-intro {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.career-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.career-bullets li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.career-bullets li i {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    margin-top: 6px;
+}
+
+.career-bullets li strong {
+    color: #fff;
+    font-size: 1.05rem;
+    display: block;
+}
+
+.career-bullets li span {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* --- FOOTER --- */
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    margin-top: 3rem;
+    background-color: var(--bg-grid-color);
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+}
+
+.console-output {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.status-online {
+    color: var(--dot-green);
+    font-weight: bold;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* --- LIGHTBOX MODAL --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 70%;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 0 25px var(--accent-glow);
+    animation: zoom-in 0.3s ease;
+}
+
+@keyframes zoom-in {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: var(--text-color);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--accent-color);
+}
+
+#lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: var(--text-muted);
+    padding: 10px 0;
+    height: 150px;
+    font-size: 0.9rem;
+}

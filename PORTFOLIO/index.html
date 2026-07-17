@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sutanu Ghosh | Portfolio</title>
+    <!-- FontAwesome for high-tech brand and standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for custom coding text aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SECTION 1: SCROLLING MARQUEE -->
+    <!-- This scrolling banner uses a CSS keyframe animation for an infinite ticker loop -->
+    <div class="marquee-container" id="marquee-ticker">
+        <div class="marquee-content">
+            <span>Innovate • Code • Build • Deploy • </span>
+            <span>Innovate • Code • Build • Deploy • </span>
+            <span>Innovate • Code • Build • Deploy • </span>
+            <span>Innovate • Code • Build • Deploy • </span>
+            <span>Innovate • Code • Build • Deploy • </span>
+            <span>Innovate • Code • Build • Deploy • </span>
+        </div>
+    </div>
+
+    <!-- MAIN WRAPPER -->
+    <main class="container">
+
+        <!-- SECTION 2: HERO SECTION -->
+        <section id="hero" class="card hero-card">
+            <!-- Background Image Container -->
+            <div class="hero-bg-container" id="hero-bg-wrapper">
+                <!-- Placeholder for the rectangular background image -->
+                <img src="assets/hero-bg.jpg" alt="High-tech Grid Background" class="hero-bg-img" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80'">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <!-- Profile Pictures Container -->
+            <div class="profile-images-wrapper">
+                <!-- Main 3D Hovering Profile Picture (manipulated by JS tilt logic) -->
+                <div class="profile-3d-container tilt-target" id="profile-3d-element">
+                    <img src="assets/profile-3d.png" alt="Sutanu Ghosh 3D Avatar" class="profile-3d-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
+                    <div class="glow-effect"></div>
+                </div>
+                <!-- Secondary Flat Profile Picture (classic static display) -->
+                <div class="profile-flat-container">
+                    <img src="assets/profile-flat.png" alt="Sutanu Ghosh Profile Photo" class="profile-flat-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'">
+                </div>
+            </div>
+
+            <!-- Hero Text Details -->
+            <div class="hero-info">
+                <h1 class="hero-name">Sutanu Ghosh</h1>
+                <p class="hero-tagline">&lt;Building the future with code. /&gt;</p>
+                <div class="tech-spec">
+                    <span class="pulse-icon"></span>
+                    <span class="spec-text">CSE Student @ SNU | AI & ML Specialist</span>
+                </div>
+            </div>
+
+            <!-- Social Links Panel -->
+            <div class="social-links-container">
+                <a href="https://github.com/rik-sutanu" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sutanu-ghosh-8bba77389?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/_esthetic.rik?igsh=MnkybXNhb3kzOXo4" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1FEkvarJbs/" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- TWO COLUMN LAYOUT: Core Focus + Educational Info -->
+        <div class="layout-grid">
+            <!-- SECTION 3: 3D TECHNICAL FEATURE ("Core Focus") -->
+            <section id="core-focus" class="card tilt-target">
+                <div class="card-header">
+                    <div class="card-dot-decorations">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="card-label">SYSTEM_MONITOR // CORE FOCUS</span>
+                </div>
+                
+                <h2 class="section-title">Core Focus</h2>
+                
+                <!-- Rectangular container for 3D manipulation -->
+                <div class="tech-image-container">
+                    <!-- Placeholder for technical image -->
+                    <img src="assets/tech-feature.jpg" alt="Artificial Neural Networks & ML Models" class="tech-feature-img" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80'">
+                    <div class="tech-scanline"></div>
+                    <div class="tech-grid-overlay"></div>
+                    <div class="card-inner-glow"></div>
+                </div>
+                
+                <div class="focus-details">
+                    <p class="code-comment">// Pursuing deep mathematical foundations of Neural Networks, Deep Learning architectures, and interactive digital models.</p>
+                </div>
+            </section>
+
+            <!-- SECTION 4: EDUCATION -->
+            <section id="education" class="card">
+                <div class="card-header">
+                    <div class="card-dot-decorations">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="card-label">ACADEMIC_RECORD // EDUCATION</span>
+                </div>
+
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-content">
+                    <div class="college-logo-container">
+                        <!-- Placeholder for college picture -->
+                        <img src="assets/college.jpg" alt="Sister Nivedita University Campus" class="college-img" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80'">
+                        <div class="image-border-decor"></div>
+                    </div>
+                    
+                    <div class="education-text">
+                        <h3 class="institution-name">Sister Nivedita University</h3>
+                        <p class="degree-title">B.Tech Computer Science and Engineering</p>
+                        <p class="specialization-badge">Specialization: Artificial Intelligence & Machine Learning</p>
+                        <p class="academic-year"><i class="fa-regular fa-calendar-days"></i> First Year Student (Batch of 2025-2029)</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 5: CERTIFICATES -->
+        <section id="certificates" class="card">
+            <div class="card-header">
+                <div class="card-dot-decorations">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <span class="card-label">QUALIFICATIONS // CERTIFICATES</span>
+            </div>
+
+            <h2 class="section-title">Certificates & Credentials</h2>
+            
+            <div class="certificates-grid">
+                <!-- Certificate Card 1 -->
+                <div class="certificate-item">
+                    <div class="certificate-image-wrapper">
+                        <!-- Placeholder for certificate 1 -->
+                        <img src="assets/certificate-1.jpg" alt="AI & ML Foundation Certificate" class="certificate-img-placeholder" onerror="this.src='https://images.unsplash.com/photo-1589330694653-ded6df53f7ee?auto=format&fit=crop&w=400&q=80'">
+                        <div class="cert-overlay">
+                            <span class="cert-zoom-btn"><i class="fa-solid fa-expand"></i> View Cert</span>
+                        </div>
+                    </div>
+                    <h3 class="certificate-title">Best Student Prize</h3>
+                    <p class="certificate-issuer">SNU & IIT Kharagpur</p>
+                </div>
+
+                <!-- Certificate Card 2 -->
+                <div class="certificate-item">
+                    <div class="certificate-image-wrapper">
+                        <!-- Placeholder for certificate 2 -->
+                        <img src="assets/certificate-2.jpg" alt="Programming in C Certificate" class="certificate-img-placeholder" onerror="this.src='https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=400&q=80'">
+                        <div class="cert-overlay">
+                            <span class="cert-zoom-btn"><i class="fa-solid fa-expand"></i> View Cert</span>
+                        </div>
+                    </div>
+                    <h3 class="certificate-title">Micro-Specialization in AI & ML</h3>
+                    <p class="certificate-issuer">IIT Kharagpur</p>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- SKILLS & PROJECTS ROW -->
+        <div class="layout-grid">
+            <!-- SECTION 6: TECHNICAL SKILLS -->
+            <section id="skills" class="card">
+                <div class="card-header">
+                    <div class="card-dot-decorations">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="card-label">TERMINAL // CORE_SKILLS</span>
+                </div>
+
+                <h2 class="section-title">Technical Skills</h2>
+                
+                <div class="skills-grid">
+                    <!-- Skill Card 1 -->
+                    <div class="skill-badge-card">
+                        <div class="skill-icon-box"><i class="fa-solid fa-code"></i></div>
+                        <h3 class="skill-name">C Programming</h3>
+                        <p class="skill-subtext">Pointers, Arrays, Strings</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2 -->
+                    <div class="skill-badge-card">
+                        <div class="skill-icon-box"><i class="fa-solid fa-microchip"></i></div>
+                        <h3 class="skill-name">Digital Electronics</h3>
+                        <p class="skill-subtext">Logic Circuits, Hardware ICs</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-progress" style="width: 78%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3 -->
+                    <div class="skill-badge-card">
+                        <div class="skill-icon-box"><i class="fa-brands fa-html5"></i></div>
+                        <h3 class="skill-name">HTML5 / CSS3 / JS</h3>
+                        <p class="skill-subtext">Responsive layouts, DOM manipulation</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 4 -->
+                    <div class="skill-badge-card">
+                        <div class="skill-icon-box"><i class="fa-solid fa-brain"></i></div>
+                        <h3 class="skill-name">AI & ML Foundations</h3>
+                        <p class="skill-subtext">Linear Algebra, ML Paradigms</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-progress" style="width: 72%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: PROJECTS SHOWCASE -->
+            <section id="projects" class="card">
+                <div class="card-header">
+                    <div class="card-dot-decorations">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="card-label">REPOS // RECENT_PROJECTS</span>
+                </div>
+
+                <h2 class="section-title">Projects Showcase</h2>
+
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span class="project-tag">HACKATHON</span>
+                        <span class="project-date"><i class="fa-regular fa-calendar"></i> June 2026</span>
+                    </div>
+                    
+                    <h3 class="project-title">Odoo x Adamas University Hackathon</h3>
+                    <p class="project-desc">
+                        Participated in design sprints, integrating automation systems with front-end analytical visuals. Drafted modular code routines to adapt ERP systems to responsive digital views.
+                    </p>
+                    
+                    <div class="project-tech-badges">
+                        <span class="badge">Odoo Modules</span>
+                        <span class="badge">ERP Systems</span>
+                        <span class="badge">Data Automation</span>
+                        <span class="badge">JS Dashboards</span>
+                    </div>
+                    
+                    <a href="https://github.com/rik-sutanu" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                        <span>Inspect Repo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- ACHIEVEMENTS & HOBBIES ROW -->
+        <div class="layout-grid">
+            <!-- SECTION 8: ACHIEVEMENTS -->
+            <section id="achievements" class="card">
+                <div class="card-header">
+                    <div class="card-dot-decorations">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="card-label">LOGS // ACHIEVEMENTS</span>
+                </div>
+
+                <h2 class="section-title">Achievements</h2>
+
+                <ul class="achievements-list">
+                    <li>
+                        <div class="achievement-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="achievement-text">
+                            <strong>Hackathon Qualifier</strong>
+                            <span>Qualified for direct final evaluations at the Odoo x Adamas University event.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="achievement-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="achievement-text">
+                            <strong>Digital Electronics Circuit Execution</strong>
+                            <span>Built and calibrated logical hardware combinations on physical circuit boards.</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SECTION 9: HOBBIES & INTERESTS -->
+            <section id="hobbies" class="card">
+                <div class="card-header">
+                    <div class="card-dot-decorations">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="card-label">MODULES // HOBBIES</span>
+                </div>
+
+                <h2 class="section-title">Hobbies & Interests</h2>
+
+                <div class="hobbies-container">
+                    <div class="hobby-card">
+                        <i class="fa-solid fa-sliders"></i>
+                        <h4>Digital Media Editing</h4>
+                        <p>Composition, color balance, light adjustments, dynamic presets.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fa-solid fa-motorcycle"></i>
+                        <h4>Royal Enfield Motorcycles</h4>
+                        <p>Adoration for Bullet 350, Continental GT 650, mechanical engine details.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 10: DESIRED CAREER PATH -->
+        <section id="career-path" class="card">
+            <div class="card-header">
+                <div class="card-dot-decorations">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <span class="card-label">COMPILER // TARGETS</span>
+            </div>
+
+            <h2 class="section-title">Desired Career Path</h2>
+            <p class="career-intro">// Future career alignments:</p>
+            
+            <ul class="career-bullets">
+                <li>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div>
+                        <strong>Machine Learning Engineer</strong>
+                        <span>- Optimize model parameters, build inference systems, train architectures.</span>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div>
+                        <strong>AI Research Assistant</strong>
+                        <span>- Explore logic bounds, hybrid inference pipelines, and academic integrations.</span>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div>
+                        <strong>Software Developer</strong>
+                        <span>- Architect lightweight interactive desktop & web layouts with zero dependency drag.</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="console-output">SYSTEM STATUS: <span class="status-online">ONLINE</span> // TARGET_CORE: AI_ML_CSE</p>
+            <p class="copyright">&copy; 2026 Sutanu Ghosh. All Rights Reserved. Built with Vanilla Web Tech.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Certificate / Image Zoom (UX Feature) -->
+    <div id="image-lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged view">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- Script connection containing mouse-following tilt math -->
+    <script src="script.js"></script>
+</body>
+</html>
